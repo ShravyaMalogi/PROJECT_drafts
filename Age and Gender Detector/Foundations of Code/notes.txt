@@ -1,7 +1,0 @@
-Each language also has an attribute known as power or level (basically how similar it is to machine code)
-Low level programming languages: Assembly, C
-High level programming languages: Java, Python
-Lower the level -> More similar to machine code
-
-We use IDEs (Integrated Development Environments) to write code (A place to write, run, debug code and also convert it to machine code)
-It is used for facilitation of code. (Examples: NetBeans, IntelliJ, Visual Studios) 
