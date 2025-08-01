@@ -1,0 +1,72 @@
+
+### **1. Objective**
+
+Develop a real-time or video-based machine learning system that:
+
+* Detects multiple persons in a frame (webcam or video).
+* Predicts each person’s age and gender.
+* Classifies persons aged **>60** as **senior citizens**.
+* Logs age, gender, and timestamp to a CSV/Excel file.
+
+---
+
+### **2. Project Components**
+
+#### **A. Data Collection / Preparation**
+
+* Gather or use an existing dataset with **face images**, **age labels**, and **gender labels** (e.g., UTKFace, IMDB-WIKI).
+* Preprocess data (resizing, normalization, data augmentation if needed).
+
+#### **B. Model Development**
+
+* Train a **custom age and gender prediction model** (multi-output CNN).
+* Optimize for real-time inference (consider lightweight architectures if needed).
+* Ensure the model performs well on age classification (±10 years) and gender classification.
+
+#### **C. Real-Time Detection Pipeline**
+
+* Use a **face detection model** (e.g., OpenCV, MTCNN, or YOLO) to detect people in the video feed.
+* For each detected face:
+
+  * Crop the face.
+  * Predict **age** and **gender**.
+  * If age > 60, label them as a **senior citizen**.
+
+#### **D. Logging Mechanism**
+
+* Record the following details into a **CSV or Excel** file:
+
+  * Age
+  * Gender
+  * Time of Visit (using `datetime`)
+
+#### **E. Optional GUI (if included)**
+
+* Display real-time video feed with:
+
+  * Bounding boxes
+  * Predicted age & gender
+  * Highlight senior citizens
+* Button to export or view the log file
+
+---
+
+### **3. Evaluation Criteria**
+
+* Functional age and gender prediction
+* Real-time/multi-person detection performance
+* Logging accuracy (CSV/Excel)
+* Model performance (accuracy, speed)
+* (Optional) GUI effectiveness
+
+---
+
+### **4. Deliverables**
+
+* Trained model (.h5 or .pt)
+* Inference script (video/webcam)
+* Logging mechanism (CSV/Excel output)
+* Readme with instructions
+* (Optional) GUI application
+* GitHub repository with code and documentation
+
