@@ -1,0 +1,19 @@
+SeniorCitizenIdentifier/
+│
+├── model/
+│   └── age_gender_model.h5  # Your trained model
+│
+├── data/
+│   └── visit_log.csv        # Output log file
+│
+├── src/
+│   ├── detector.py          # Face detection module
+│   ├── predictor.py         # Age/Gender prediction
+│   ├── logger.py            # CSV/Excel logging
+│   └── app.py               # Main pipeline (webcam/video)
+│
+├── gui/                     # Optional GUI files
+│   └── interface.py
+│
+├── requirements.txt
+└── README.md
