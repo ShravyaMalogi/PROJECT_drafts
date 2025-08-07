@@ -1,0 +1,158 @@
+## 🚗 Car Colour Detection and Counting at Traffic Signal – **Project Outline**
+
+---
+
+### 🔹 1. **Project Objective**
+
+Develop a computer vision-based system to:
+
+* Detect and count the number of cars at a traffic signal.
+* Identify car color:
+
+  * Draw **red rectangle** for **blue cars**.
+  * Draw **blue rectangle** for **non-blue cars**.
+* Detect and count the number of **people** present.
+* Display the input image with rectangles and counts in a **GUI preview**.
+
+---
+
+### 🔹 2. **Key Features**
+
+| Feature                  | Description                                        |
+| ------------------------ | -------------------------------------------------- |
+| Car detection            | Detect all cars in the input image.                |
+| Car color classification | Classify detected cars into "blue" and "non-blue". |
+| Rectangle display        | Red for blue cars, blue for non-blue cars.         |
+| People detection         | Detect and count number of people in the image.    |
+| GUI preview              | Display input image with overlays and counts.      |
+
+---
+
+### 🔹 3. **Tech Stack**
+
+| Component        | Tool/Library                                                   |
+| ---------------- | -------------------------------------------------------------- |
+| Language         | Python                                                         |
+| GUI              | Tkinter / PyQt5 / Gradio                                       |
+| Image Processing | OpenCV                                                         |
+| Object Detection | YOLOv5 / YOLOv8 or pre-trained models (like SSD, Haar Cascade) |
+| Color Detection  | OpenCV (HSV or RGB mask)                                       |
+| People Detection | COCO pre-trained model (YOLO or MobileNet-SSD)                 |
+
+---
+
+### 🔹 4. **Modules / Components**
+
+#### ✅ a. **Image Input / Camera Feed**
+
+* Load image from local disk or use webcam.
+* GUI button to browse/select image.
+
+#### ✅ b. **Object Detection**
+
+* Use YOLO or another object detection model to detect:
+
+  * Cars
+  * People
+
+#### ✅ c. **Car Color Classification**
+
+* For each car ROI:
+
+  * Crop the detected region.
+  * Use average color or color histogram.
+  * If predominantly blue → mark as **blue car**.
+
+#### ✅ d. **Visualization**
+
+* Draw **rectangles**:
+
+  * **Red** for blue cars.
+  * **Blue** for others.
+* Count and display:
+
+  * Total cars
+  * Number of blue cars
+  * Number of people
+
+#### ✅ e. **GUI (Graphical User Interface)**
+
+* Display original + processed image.
+* Buttons:
+
+  * Load Image
+  * Detect & Analyze
+  * Exit
+* Show output info in labels:
+
+  * "Total Cars: X, Blue Cars: Y"
+  * "People Detected: Z"
+
+---
+
+### 🔹 5. **Workflow**
+
+```text
+[Image Input]
+      ↓
+[Object Detection]
+      ↓
+[Car & People Detection]
+      ↓
+[Color Classification (Cars)]
+      ↓
+[Draw Rectangles]
+      ↓
+[GUI Display with Count]
+```
+
+---
+
+### 🔹 6. **Advanced (Optional Enhancements)**
+
+* Add **video stream support** (real-time detection).
+* Export results (counts, image with rectangles).
+* Train a custom YOLO model on car color if needed.
+* Use **K-Means clustering** for color analysis in complex images.
+
+---
+
+### 🔹 7. **Folder Structure (Sample)**
+
+```
+car_color_detection_project/
+│
+├── main.py                # GUI + integration
+├── detection.py           # Object detection logic
+├── color_classifier.py    # Color checking functions
+├── gui.py                 # GUI using Tkinter/PyQt
+├── utils.py               # Helper functions
+├── images/                # Input and test images
+├── outputs/               # Processed image previews
+├── models/                # YOLO/SSD model weights
+└── requirements.txt       # List of dependencies
+```
+
+---
+
+### 🔹 8. **Dependencies**
+
+```txt
+opencv-python
+numpy
+pillow
+torch
+tkinter or pyqt5 or gradio
+ultralytics (for YOLOv8)
+```
+
+---
+
+### 🔹 9. **Evaluation**
+
+* Accuracy of object detection (cars and people).
+* Precision in color classification.
+* GUI responsiveness and clarity.
+* Real-time or near real-time processing (for video).
+
+---
